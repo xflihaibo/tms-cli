@@ -293,14 +293,6 @@ core-util-is@~1.0.0:
   resolved "http://npm.taimei.com:80/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
-d@1, d@^1.0.0, d@^1.0.1:
-  version "1.0.1"
-  resolved "http://npm.taimei.com:80/d/-/d-1.0.1.tgz#8698095372d58dbee346ffd0c7093f99f8f9eb5a"
-  integrity sha1-hpgJU3LVjb7jRv/Qxwk/mfj561o=
-  dependencies:
-    es5-ext "^0.10.50"
-    type "^1.0.1"
-
 decamelize@^1.2.0:
   version "1.2.0"
   resolved "http://npm.taimei.com:80/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
@@ -417,23 +409,10 @@ duplexer3@^0.1.4:
   resolved "http://npm.taimei.com:80/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
   integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
-duration@^0.2.2:
-  version "0.2.2"
-  resolved "http://npm.taimei.com:80/duration/-/duration-0.2.2.tgz#ddf149bc3bc6901150fe9017111d016b3357f529"
-  integrity sha1-3fFJvDvGkBFQ/pAXER0BazNX9Sk=
-  dependencies:
-    d "1"
-    es5-ext "~0.10.46"
-
 emoji-regex@^7.0.1:
   version "7.0.3"
   resolved "http://npm.taimei.com:80/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
   integrity sha1-kzoEBShgyF6DwSJHnEdIqOTHIVY=
-
-emoji-regex@^9.2.1:
-  version "9.2.1"
-  resolved "http://npm.taimei.com:80/emoji-regex/-/emoji-regex-9.2.1.tgz#c9b25604256bb3428964bead3ab63069d736f7ee"
-  integrity sha1-ybJWBCVrs0KJZL6tOrYwadc29+4=
 
 end-of-stream@^1.0.0:
   version "1.4.4"
@@ -442,44 +421,10 @@ end-of-stream@^1.0.0:
   dependencies:
     once "^1.4.0"
 
-es5-ext@^0.10.35, es5-ext@^0.10.46, es5-ext@^0.10.49, es5-ext@^0.10.50, es5-ext@~0.10.14, es5-ext@~0.10.46:
-  version "0.10.53"
-  resolved "http://npm.taimei.com:80/es5-ext/-/es5-ext-0.10.53.tgz#93c5a3acfdbef275220ad72644ad02ee18368de1"
-  integrity sha1-k8WjrP2+8nUiCtcmRK0C7hg2jeE=
-  dependencies:
-    es6-iterator "~2.0.3"
-    es6-symbol "~3.1.3"
-    next-tick "~1.0.0"
-
-es6-iterator@~2.0.3:
-  version "2.0.3"
-  resolved "http://npm.taimei.com:80/es6-iterator/-/es6-iterator-2.0.3.tgz#a7de889141a05a94b0854403b2d0a0fbfa98f3b7"
-  integrity sha1-p96IkUGgWpSwhUQDstCg+/qY87c=
-  dependencies:
-    d "1"
-    es5-ext "^0.10.35"
-    es6-symbol "^3.1.1"
-
-es6-symbol@^3.1.1, es6-symbol@~3.1.3:
-  version "3.1.3"
-  resolved "http://npm.taimei.com:80/es6-symbol/-/es6-symbol-3.1.3.tgz#bad5d3c1bcdac28269f4cb331e431c78ac705d18"
-  integrity sha1-utXTwbzawoJp9MszHkMceKxwXRg=
-  dependencies:
-    d "^1.0.1"
-    ext "^1.1.2"
-
 escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "http://npm.taimei.com:80/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
-
-event-emitter@^0.3.5:
-  version "0.3.5"
-  resolved "http://npm.taimei.com:80/event-emitter/-/event-emitter-0.3.5.tgz#df8c69eef1647923c7157b9ce83840610b02cc39"
-  integrity sha1-34xp7vFkeSPHFXuc6DhAYQsCzDk=
-  dependencies:
-    d "1"
-    es5-ext "~0.10.14"
 
 ext-list@^2.0.0:
   version "2.2.2"
@@ -496,13 +441,6 @@ ext-name@^5.0.0:
     ext-list "^2.0.0"
     sort-keys-length "^1.0.0"
 
-ext@^1.1.2:
-  version "1.4.0"
-  resolved "http://npm.taimei.com:80/ext/-/ext-1.4.0.tgz#89ae7a07158f79d35517882904324077e4379244"
-  integrity sha1-ia56BxWPedNVF4gpBDJAd+Q3kkQ=
-  dependencies:
-    type "^2.0.0"
-
 fd-slicer@~1.1.0:
   version "1.1.0"
   resolved "http://npm.taimei.com:80/fd-slicer/-/fd-slicer-1.1.0.tgz#25c7c89cb1f9077f8891bbe61d8f390eae256f1e"
@@ -512,8 +450,8 @@ fd-slicer@~1.1.0:
 
 figlet@^1.5.0:
   version "1.5.0"
-  resolved "http://npm.taimei.com:80/figlet/-/figlet-1.5.0.tgz#2db4d00a584e5155a96080632db919213c3e003c"
-  integrity sha1-LbTQClhOUVWpYIBjLbkZITw+ADw=
+  resolved "https://registry.yarnpkg.com/figlet/-/figlet-1.5.0.tgz#2db4d00a584e5155a96080632db919213c3e003c"
+  integrity sha512-ZQJM4aifMpz6H19AW1VqvZ7l4pOE9p7i/3LyxgO2kp+PO/VcDYNqIHEMtkccqIhTXMKci4kjueJr/iCQEaT/Ww==
 
 file-type@^3.8.0:
   version "3.9.0"
@@ -823,18 +761,6 @@ log-symbols@^4.0.0:
   dependencies:
     chalk "^4.0.0"
 
-log@^6.0.0:
-  version "6.0.0"
-  resolved "http://npm.taimei.com:80/log/-/log-6.0.0.tgz#1e8e655f0389148e729d9ddd6d3bcbe8b93b8d21"
-  integrity sha1-Ho5lXwOJFI5ynZ3dbTvL6Lk7jSE=
-  dependencies:
-    d "^1.0.0"
-    duration "^0.2.2"
-    es5-ext "^0.10.49"
-    event-emitter "^0.3.5"
-    sprintf-kit "^2.0.0"
-    type "^1.0.1"
-
 lowercase-keys@1.0.0:
   version "1.0.0"
   resolved "http://npm.taimei.com:80/lowercase-keys/-/lowercase-keys-1.0.0.tgz#4e3366b39e7f5457e35f1324bdf6f88d0bfc7306"
@@ -878,11 +804,6 @@ ms@^2.1.2:
   version "2.1.3"
   resolved "http://npm.taimei.com:80/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha1-V0yBOM4dK1hh8LRFedut1gxmFbI=
-
-next-tick@~1.0.0:
-  version "1.0.0"
-  resolved "http://npm.taimei.com:80/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
-  integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
 normalize-url@2.0.1:
   version "2.0.1"
@@ -1141,11 +1062,6 @@ rimraf@^3.0.0:
   dependencies:
     glob "^7.1.3"
 
-rovel.js@^1.1.7:
-  version "1.1.7"
-  resolved "http://npm.taimei.com:80/rovel.js/-/rovel.js-1.1.7.tgz#07fa2598461502c23cead9b5f6383ed7aaf4da1f"
-  integrity sha1-B/olmEYVAsI86tm19jg+16r02h8=
-
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "http://npm.taimei.com:80/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
@@ -1209,13 +1125,6 @@ split2@^3.1.1:
   integrity sha1-vyzyo32DgxLCSciSBv16F90SNl8=
   dependencies:
     readable-stream "^3.0.0"
-
-sprintf-kit@^2.0.0:
-  version "2.0.0"
-  resolved "http://npm.taimei.com:80/sprintf-kit/-/sprintf-kit-2.0.0.tgz#47499d636e9cc68f2f921d30eb4f0b911a2d7835"
-  integrity sha1-R0mdY26cxo8vkh0w608LkRoteDU=
-  dependencies:
-    es5-ext "^0.10.46"
 
 strict-uri-encode@^1.0.0:
   version "1.1.0"
@@ -1343,16 +1252,6 @@ type-fest@^0.5.1:
   version "0.5.2"
   resolved "http://npm.taimei.com:80/type-fest/-/type-fest-0.5.2.tgz#d6ef42a0356c6cd45f49485c3b6281fc148e48a2"
   integrity sha1-1u9CoDVsbNRfSUhcO2KB/BSOSKI=
-
-type@^1.0.1:
-  version "1.2.0"
-  resolved "http://npm.taimei.com:80/type/-/type-1.2.0.tgz#848dd7698dafa3e54a6c479e759c4bc3f18847a0"
-  integrity sha1-hI3XaY2vo+VKbEeedZxLw/GIR6A=
-
-type@^2.0.0:
-  version "2.1.0"
-  resolved "http://npm.taimei.com:80/type/-/type-2.1.0.tgz#9bdc22c648cf8cf86dd23d32336a41cfb6475e3f"
-  integrity sha1-m9wixkjPjPht0j0yM2pBz7ZHXj8=
 
 unbzip2-stream@^1.0.9:
   version "1.4.3"
