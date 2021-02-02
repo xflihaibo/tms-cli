@@ -1,0 +1,72 @@
+#! /usr/bin/env node
+const  figlet = require('figlet');
+const  Printer = require('@darkobits/lolcatjs');
+const package=require('../package.json');
+const { Command } = require('commander');
+const ora = require('ora');
+const download = require('download-git-repo');
+const shell = require('shelljs');
+let json2ts = require("json2ts");
+const chalk = require('chalk');
+const program = new Command();
+const input=figlet.textSync('TMS Cli',{
+    horizontalLayout: 'full',
+    verticalLayout: 'full',
+    width: 500,
+    whitespaceBreak: true});
+const transformed = Printer.default.fromString(`${input}\n  @from taimei technology   version ${package.version}`);
+
+  program
+  .option('-v, --version', chalk.cyan('output the version number'))
+  .option('i, install', chalk.cyan('updata tms-cli'))
+  .option('-i, --init', chalk.cyan('init project! '))
+  .option('-t, --json2ts', chalk.cyan('typesscript to type! '))
+  .option('-r, --rollup <filename> ', chalk.cyan('create rollup template! '))
+  .helpOption('-h, --help', chalk.cyan('can I help you? '))
+  .parse(process.argv);
+const options = program.opts();
+
+if (options.rollup){
+     shell.rm('-rf', options.rollup);
+    // let pwd= shell.pwd().stdout
+    // shell.mkdir('-p', options.rollup);
+    // shell.cd( options.rollup);
+    // shell.echo(shell.pwd())
+   const spinner = ora('⏰ download rollup template ....').start();
+   download('direct:https://github.com/xflihaibo/rollupcli.git', options.rollup, { clone: true }, function (err) {
+      if(err){
+          spinner.fail('download Error!!')
+      }else{
+           shell.sed('-i','debug-web',options.rollup,shell.pwd()+'/'+options.rollup+'/package.json');
+          spinner .succeed('download Success!!')
+      }
+})
+    
+ console.log(`- rollup project`,options.rollup);
+}
+
+
+
+
+
+
+
+if (options.version) {
+    console.log(transformed)
+}
+
+if (options.init){
+ console.log(`- init project`);
+}
+
+if(options.json2ts){
+    console.log('log',json2ts)
+    let result = json2ts.convert(JSON.stringify({
+        name:'busili',
+        age:12,
+        happy:['music','eats']
+    }));
+    console.log(result)
+}
+
+
