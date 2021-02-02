@@ -17,12 +17,11 @@ const input=figlet.textSync('TMS Cli',{
 const transformed = Printer.default.fromString(`${input}\n  @from taimei technology   version ${package.version}`);
 
   program
-  .option('-v, --version', chalk.cyan('output the version number'))
-  .option('i, install', chalk.cyan('updata tms-cli'))
-  .option('-i, --init', chalk.cyan('init project! '))
-  .option('-t, --json2ts', chalk.cyan('typesscript to type! '))
-  .option('-r, --rollup <filename> ', chalk.cyan('create rollup template! '))
-  .helpOption('-h, --help', chalk.cyan('can I help you? '))
+  .option('-v, --version', chalk.cyan('🎉 output the version number'))
+  .option('-i, --init', chalk.cyan('🚄 init project! '))
+  .option('-t, --json2ts', chalk.cyan('🌴 typesscript to type! '))
+  .option('-r, --rollup <filename> ', chalk.cyan(' 📦 create rollup template! '))
+  .helpOption('-h, --help', chalk.cyan('🚀 can I help you? '))
   .parse(process.argv);
 const options = program.opts();
 
