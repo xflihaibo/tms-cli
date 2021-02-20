@@ -47,10 +47,10 @@ if (options.rollup){
           spinner.fail('download Error!!')
       }else{
            shell.sed('-i','debug-web',options.rollup,shell.pwd()+'/'+options.rollup+'/package.json');
-          spinner.succeed('download Success!!')
-          console.log(`you can`);
-          console.log(`cd ${options.rollup}`);
-          console.log(`yarn install or npm install `);   
+           spinner.succeed('download Success!!')
+           console.log(Printer.default.fromString(`you can`));
+           console.log(`cd ${options.rollup}`);
+           console.log(`yarn install or npm install `);   
       }
    })
   
@@ -60,7 +60,7 @@ if (options.rollup){
 if (options.chrome){
     shell.rm('-rf', options.chrome);
    const spinner = ora('⏰ download chrome plugin template ....').start();
-   download('direct:https://github.com/xflihaibo/electron-react-template.git', options.chrome, { clone: true }, function (err) {
+   download('direct:https://github.com/xflihaibo/chrome-plugin.git', options.chrome, { clone: true }, function (err) {
       if(err){
           spinner.fail('download Error!!')
       }else{
@@ -71,13 +71,13 @@ if (options.chrome){
 
 if (options.electron){
     shell.rm('-rf', options.electron);
-   const spinner = ora('⏰ create electron react  template! ....').start();
-   download('direct:https://github.com/xflihaibo/chrome-plugin.git', options.electron, { clone: true }, function (err) {
+   const spinner = ora('⏰ create electron react template! ....').start();
+   download('direct:https://github.com/xflihaibo/electron-react-template.git', options.electron, { clone: true }, function (err) {
       if(err){
           spinner.fail('download Error!!')
       }else{
           spinner.succeed('download Success!!')
-          console.log(`you can`);
+          console.log(Printer.default.fromString(`you can`));
           console.log(`cd ${options.rollup}`);
           console.log(`npm install `);  
           console.log(`npm run start-dev `);   
@@ -87,15 +87,14 @@ if (options.electron){
 
 if (options.version) {
     asciify('TMS CLI',{font:'slant'},(err, fonts)=>{
-   const newfontds =   Printer.default.fromString(`${fonts}\n  @from taimei technology   version ${package.version}`);
+    const newfontds =   Printer.default.fromString(`${fonts}\n  @from taimei technology   version ${package.version}`);
     console.log(newfontds);
   })
 }
 
 if (options.init){
- console.log(`- init project`);
+ console.log(`init project`);
 }
-
 
 if (options.watch){
   console.log(`- watch`,process.cwd());
@@ -103,8 +102,6 @@ if (options.watch){
   watcher.on('change', (path, stats) => {
           if (stats) console.log(`File ${path} changed size to ${stats.size}`);
   }) .on('error', error => log(`Watcher error: ${error}`));
-
- 
 }
 
 if(options.json2ts){
