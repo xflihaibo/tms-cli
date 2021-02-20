@@ -28,6 +28,7 @@ const program = new Command();
   .option('-t, --json2ts', chalk.cyan('🌴 typesscript to type! '))
   .option('-r, --rollup <filename> ', chalk.cyan('📦 create rollup template! '))
   .option('-c, --chrome <filename> ', chalk.cyan('📦 create chrome plugins template! '))
+  .option('-e, --electron <filename> ', chalk.cyan('📦 create electron react  template! '))
   .option('-w, --watch', chalk.cyan('🏠 watch file change！'))
   .helpOption('-h, --help', chalk.cyan('🚀 can I help you? '))
   .parse(process.argv);
@@ -57,22 +58,32 @@ if (options.rollup){
 
 
 if (options.chrome){
-     shell.rm('-rf', options.chrome);
-    // let pwd= shell.pwd().stdout
-    // shell.mkdir('-p', options.rollup);
-    // shell.cd( options.rollup);
-    // shell.echo(shell.pwd())
+    shell.rm('-rf', options.chrome);
    const spinner = ora('⏰ download chrome plugin template ....').start();
-   download('direct:https://github.com/xflihaibo/chrome-plugin.git', options.chrome, { clone: true }, function (err) {
+   download('direct:https://github.com/xflihaibo/electron-react-template.git', options.chrome, { clone: true }, function (err) {
       if(err){
           spinner.fail('download Error!!')
       }else{
-           // shell.sed('-i','debug-web',options.rollup,shell.pwd()+'/'+options.rollup+'/package.json');
           spinner.succeed('download Success!!')
       }
    })
 }
 
+if (options.electron){
+    shell.rm('-rf', options.electron);
+   const spinner = ora('⏰ create electron react  template! ....').start();
+   download('direct:https://github.com/xflihaibo/chrome-plugin.git', options.electron, { clone: true }, function (err) {
+      if(err){
+          spinner.fail('download Error!!')
+      }else{
+          spinner.succeed('download Success!!')
+          console.log(`you can`);
+          console.log(`cd ${options.rollup}`);
+          console.log(`npm install `);  
+          console.log(`npm run start-dev `);   
+      }
+   })
+}
 
 if (options.version) {
     asciify('TMS CLI',{font:'slant'},(err, fonts)=>{
@@ -90,7 +101,6 @@ if (options.watch){
   console.log(`- watch`,process.cwd());
   const watcher = chokidar.watch(process.cwd());
   watcher.on('change', (path, stats) => {
-    console.log('🏠🏠🏠🏠',path,stats)
           if (stats) console.log(`File ${path} changed size to ${stats.size}`);
   }) .on('error', error => log(`Watcher error: ${error}`));
 
