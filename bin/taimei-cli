@@ -1,28 +1,37 @@
 #! /usr/bin/env node
-const  figlet = require('figlet');
 const  Printer = require('@darkobits/lolcatjs');
 const package=require('../package.json');
 const { Command } = require('commander');
 const ora = require('ora');
 const download = require('download-git-repo');
 const shell = require('shelljs');
-let json2ts = require("json2ts");
+const json2ts = require("json2ts");
 const chalk = require('chalk');
-const program = new Command();
-const input=figlet.textSync('TMS Cli',{
-    horizontalLayout: 'full',
-    verticalLayout: 'full',
-    width: 500,
-    whitespaceBreak: true});
-const transformed = Printer.default.fromString(`${input}\n  @from taimei technology   version ${package.version}`);
+const asciify = require('asciify');
+const yargs = require('yargs');
+const chokidar = require('chokidar');
 
+const { hideBin } = require('yargs/helpers')
+const argv = yargs(hideBin(process.argv)).argv
+
+
+
+// console.log(argv)
+// chokidar.watch('.').on('all', (event, path) => {
+//   console.log(event, path);
+// });
+
+const program = new Command();
   program
   .option('-v, --version', chalk.cyan('🎉 output the version number'))
   .option('-i, --init', chalk.cyan('🚄 init project! '))
   .option('-t, --json2ts', chalk.cyan('🌴 typesscript to type! '))
-  .option('-r, --rollup <filename> ', chalk.cyan(' 📦 create rollup template! '))
+  .option('-r, --rollup <filename> ', chalk.cyan('📦 create rollup template! '))
+  .option('-c, --chrome <filename> ', chalk.cyan('📦 create chrome plugins template! '))
+  .option('-w, --watch', chalk.cyan('🏠 watch file change！'))
   .helpOption('-h, --help', chalk.cyan('🚀 can I help you? '))
   .parse(process.argv);
+
 const options = program.opts();
 
 if (options.rollup){
@@ -37,29 +46,58 @@ if (options.rollup){
           spinner.fail('download Error!!')
       }else{
            shell.sed('-i','debug-web',options.rollup,shell.pwd()+'/'+options.rollup+'/package.json');
-          spinner .succeed('download Success!!')
+          spinner.succeed('download Success!!')
+          console.log(`you can`);
+          console.log(`cd ${options.rollup}`);
+          console.log(`yarn install or npm install `);   
       }
-})
-    
- console.log(`- rollup project`,options.rollup);
+   })
+  
 }
 
 
-
-
-
+if (options.chrome){
+     shell.rm('-rf', options.chrome);
+    // let pwd= shell.pwd().stdout
+    // shell.mkdir('-p', options.rollup);
+    // shell.cd( options.rollup);
+    // shell.echo(shell.pwd())
+   const spinner = ora('⏰ download chrome plugin template ....').start();
+   download('direct:https://github.com/xflihaibo/chrome-plugin.git', options.chrome, { clone: true }, function (err) {
+      if(err){
+          spinner.fail('download Error!!')
+      }else{
+           // shell.sed('-i','debug-web',options.rollup,shell.pwd()+'/'+options.rollup+'/package.json');
+          spinner.succeed('download Success!!')
+      }
+   })
+}
 
 
 if (options.version) {
-    console.log(transformed)
+    asciify('TMS CLI',{font:'slant'},(err, fonts)=>{
+   const newfontds =   Printer.default.fromString(`${fonts}\n  @from taimei technology   version ${package.version}`);
+    console.log(newfontds);
+  })
 }
 
 if (options.init){
  console.log(`- init project`);
 }
 
+
+if (options.watch){
+  console.log(`- watch`,process.cwd());
+  const watcher = chokidar.watch(process.cwd());
+  watcher.on('change', (path, stats) => {
+    console.log('🏠🏠🏠🏠',path,stats)
+          if (stats) console.log(`File ${path} changed size to ${stats.size}`);
+  }) .on('error', error => log(`Watcher error: ${error}`));
+
+ 
+}
+
 if(options.json2ts){
-    console.log('log',json2ts)
     let result = json2ts.convert(JSON.stringify({
         name:'busili',
         age:12,

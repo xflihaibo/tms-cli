@@ -6,7 +6,11 @@
 
 ```bash
 
-## 查看命令行
+# 全局安装
+
+$ npm install @silencei/tms-cli -g
+
+# 查看命令行
 $ tms-cl -h
 
 # 创建rollup 脚手架模版
