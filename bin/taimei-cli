@@ -46,6 +46,7 @@ if (options.rollup){
       if(err){
           spinner.fail('download Error!!')
       }else{
+           console.log('⏰ create rollup template! ....');
            shell.sed('-i','debug-web',options.rollup,shell.pwd()+'/'+options.rollup+'/package.json');
            spinner.succeed('download Success!!')
            console.log(Printer.default.fromString(`you can`));
@@ -76,9 +77,10 @@ if (options.electron){
       if(err){
           spinner.fail('download Error!!')
       }else{
+          console.log('⏰ create electron react template! ....');
           spinner.succeed('download Success!!')
           console.log(Printer.default.fromString(`you can`));
-          console.log(`cd ${options.rollup}`);
+          console.log(`cd ${options.electron}`);
           console.log(`npm install `);  
           console.log(`npm run start-dev `);   
       }
